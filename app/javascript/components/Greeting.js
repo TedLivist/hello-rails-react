@@ -1,6 +1,7 @@
 import React, { useEffect } from "react"
 import PropTypes from "prop-types"
-import { displayGreeting, DISPLAY_GREETING } from "../redux/greetings/greetings"
+import store from "../redux/configureStore"
+import { displayGreeting } from "../redux/greetings/greetings"
 import { useSelector } from "react-redux"
 
 const Greeting = () => {
@@ -12,7 +13,7 @@ const Greeting = () => {
 
   return (
     <div>
-      <h1>{greeting && greeting.message}</h1>
+      <h1>Greeting: {greeting && greeting.message}</h1>
     </div>
   )
 }
