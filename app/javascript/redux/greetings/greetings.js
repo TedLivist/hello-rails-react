@@ -8,8 +8,8 @@ const initialState = []
 export const displayGreeting = async () => {
   const data = await getGreeting()
   store.dispatch({
-      type: DISPLAY_GREETING,
-      payload: data
+    type: DISPLAY_GREETING,
+    payload: data
   })
 }
 
