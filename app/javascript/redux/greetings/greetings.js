@@ -5,9 +5,9 @@ export const DISPLAY_GREETING = 'helloRailsReact/greetings/DISPLAY_GREETING'
 
 const initialState = []
 
-export const displayGreeting = () => {
-  const data = getGreeting()
-  dispatch({
+export const displayGreeting = async () => {
+  const data = await getGreeting()
+  store.dispatch({
       type: DISPLAY_GREETING,
       payload: data
   })
