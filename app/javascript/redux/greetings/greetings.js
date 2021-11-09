@@ -1,3 +1,4 @@
+import { getGreeting } from "../../helper/getGreeting"
 import store from "../configureStore"
 
 export const DISPLAY_GREETING = 'helloRailsReact/greetings/DISPLAY_GREETING'
@@ -5,12 +6,11 @@ export const DISPLAY_GREETING = 'helloRailsReact/greetings/DISPLAY_GREETING'
 const initialState = []
 
 export const displayGreeting = () => {
-  fetch(`api/v1/greeting.json`)
-    .then((response) => response.json())
-    .then((json) => store.dispatch({
+  const data = getGreeting()
+  dispatch({
       type: DISPLAY_GREETING,
-      payload: json
-    }))
+      payload: data
+  })
 }
 
 const reducer = (state = initialState, action) => {
